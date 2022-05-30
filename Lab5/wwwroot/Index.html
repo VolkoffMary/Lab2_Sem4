@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список країн</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Список країн</h1>
+    <h3>Додати країну</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addCountry()">
+        <input type="text" id="add-name" placeholder="Додати країну">
+        <input type="submit" value="Додати">
+    </form>
+
+    <div id="editForm" style="display: none">
+        <h3>Редагувати</h3>
+        <form action="javascript:void(0);" onsubmit="updateCountry()">
+            <input type="hidden" id="edit-id" />
+            <input type="text" id="edit-name" />
+            <input type="submit" value="Зберегти" />
+            <a onclick="closeInput()" aria-label="Закрити">Закрити</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Назва</th>
+        </tr>
+        <tbody id="countries"></tbody>
+    </table>
+
+    <script src="js/lab2.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getCountries();
+    </script>
+</body>
+</html>
